@@ -1,0 +1,29 @@
+type Movie {
+    id: ID!
+    name: String!
+    photo: String!
+    description: String!
+    casting: String!
+}
+
+type Query {
+    movies: [Movie!]!
+    movie(id: ID!): Movie
+}
+
+type Mutation {
+    addMovie(
+        id: ID!, 
+        name: String!, 
+        photo: String!, 
+        description: String!, 
+        casting: String!
+    ): [Movie!]!
+    updateMovie(id: ID!, 
+        name: String!, 
+        photo: String!, 
+        description: String!, 
+        casting: String!
+    ): Movie
+    deleteMovie(id: ID!): ID!
+}
